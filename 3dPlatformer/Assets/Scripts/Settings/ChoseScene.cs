@@ -10,6 +10,7 @@ public class ChoseScene : MonoBehaviour
     [SerializeField] private Button _buttonChose;
     [SerializeField] private Button _buttonSettings;
     [SerializeField] private Button _buttonQuit;
+    [SerializeField] private Button _buttonTutor;
     public void ManageScene(string name)
     {
         SceneManager.LoadScene(name);

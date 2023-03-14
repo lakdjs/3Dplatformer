@@ -7,7 +7,7 @@ public class LvlManager : MonoBehaviour
 {
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             UnLockLevel();
             SceneManager.LoadScene("ChoseLVL");
