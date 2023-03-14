@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
+    [SerializeField] private GameObject _player;
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _speed;
     [SerializeField] private float _rotSpeed;
     [SerializeField] private float _jumpPower;
     [SerializeField] private AnimatorManage _playerAnimationsPlayer;
+    [SerializeField] private AudioSource _walkSource;
+    [SerializeField] private AudioSource _jumpSource;
+    [SerializeField] private AudioClip _walkClip;
+    [SerializeField] private AudioClip _jumpClip;
+
     private bool _onGround = true;
     void Update()
     {
@@ -16,6 +22,7 @@ public class MovementController : MonoBehaviour
         {
             _rigidbody.AddForce(Vector3.up * _jumpPower, ForceMode.Impulse);
             _playerAnimationsPlayer.PlayJump();
+            _jumpSource.PlayOneShot(_jumpClip);
         }
         //OldInput();
         PlayerMove();
@@ -47,6 +54,34 @@ public class MovementController : MonoBehaviour
         {
            _playerAnimationsPlayer.PlayIDLE();
        }
+        //if(Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.S)|| Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.D)
+
+        //if (Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.S)|| Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.A))
+        if (_walkSource.isPlaying == true)
+        {
+
+            if (x != 0 || z != 0)
+            {
+                
+            }
+            else
+            {
+                _walkSource.Stop();
+            }
+        }
+        else if(_walkSource.isPlaying == false)
+        {
+            if(x!=0 || z !=0)
+            {
+                _walkSource.Play();
+            }
+            else
+            {
+                _walkSource.Stop();
+            }
+            
+        }
+       
     }
 
     private void OldInput()
