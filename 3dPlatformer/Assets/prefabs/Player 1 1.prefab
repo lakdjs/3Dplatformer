@@ -197,6 +197,8 @@ GameObject:
   - component: {fileID: 7442556323249297413}
   - component: {fileID: 7442556323249297418}
   - component: {fileID: 7442556323249297412}
+  - component: {fileID: 353622028}
+  - component: {fileID: 353622037}
   m_Layer: 0
   m_Name: Player 1 1
   m_TagString: Player
@@ -263,7 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 3215199999423137300}
   _rigidbody: {fileID: 3215199999423137301}
-  _speed: 10
+  _Speed: 10
   _rotSpeed: 0
   _jumpPower: 5
   _playerAnimationsPlayer: {fileID: 3215199999423137309}
@@ -271,6 +273,7 @@ MonoBehaviour:
   _jumpSource: {fileID: 7442556323249297418}
   _walkClip: {fileID: 8300000, guid: f7ee27bd71c59a94e94520ae0877e2ef, type: 3}
   _jumpClip: {fileID: 8300000, guid: 1318efdbd37a0cf4588578725bd3b1fe, type: 3}
+  _energy: {fileID: 0}
 --- !u!95 &3215199999423137308
 Animator:
   serializedVersion: 5
@@ -509,3 +512,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 0}
+--- !u!114 &353622028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3215199999423137300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa828f9025edd84484972b653231284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &353622037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3215199999423137300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34739f0b7ccbb04aac1d9f2411e1bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _imageKey: {fileID: 0}
+  _key: {fileID: 0}

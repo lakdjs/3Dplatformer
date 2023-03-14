@@ -44,6 +44,7 @@ public class MovementController : MonoBehaviour
         {
             Debug.Log("est");
             _Speed += 5;
+            _jumpPower += 5;
             Destroy(_energy);
         }
     }
