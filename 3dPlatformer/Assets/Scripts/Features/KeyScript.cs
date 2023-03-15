@@ -30,7 +30,7 @@ public class KeyScript : MonoBehaviour
         {
             Debug.Log("Essssss");
             KeyNum = 1;
-            Destroy(_key);
+            Destroy(other.gameObject);
         }
     }
 }

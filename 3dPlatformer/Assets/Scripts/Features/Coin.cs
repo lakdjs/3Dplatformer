@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    
+    [SerializeField] private GameObject _coinPh;
     private int _coin;
 
     private void Start()
@@ -26,7 +26,7 @@ public class Coin : MonoBehaviour
             PlayerPrefs.SetInt("coins", _coin + 1);
             PlayerPrefs.Save();
             Debug.Log(PlayerPrefs.GetInt("coins"));
-            
+            Destroy(other.gameObject);
             
         }
     }

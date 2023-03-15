@@ -6,20 +6,24 @@ public class MovementController : MonoBehaviour
 {
     [SerializeField] private GameObject _player;
     [SerializeField] private Rigidbody _rigidbody;
-   
+    
     [SerializeField] private float _Speed;
     [SerializeField] private float _rotSpeed;
     [SerializeField] private float _jumpPower;
     [SerializeField] private AnimatorManage _playerAnimationsPlayer;
     [SerializeField] private AudioSource _walkSource;
     [SerializeField] private AudioSource _jumpSource;
+    [SerializeField] private AudioSource _jumpSourceDown;
     [SerializeField] private AudioClip _walkClip;
     [SerializeField] private AudioClip _jumpClip;
+    [SerializeField] private AudioClip _jumpClipDown;
     [SerializeField] private GameObject _energy;
 
-    private bool _onGround = true;
+    private bool _onGround = false;
     void Update()
     {
+      
+       
         if (Input.GetKeyDown(KeyCode.Space) && _onGround)
         {
             _rigidbody.AddForce(Vector3.up * _jumpPower, ForceMode.Impulse);
@@ -34,6 +38,7 @@ public class MovementController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             _onGround = true;
+            _jumpSourceDown.PlayOneShot(_jumpClipDown);
         }
 
        
@@ -44,8 +49,8 @@ public class MovementController : MonoBehaviour
         {
             Debug.Log("est");
             _Speed += 5;
-            _jumpPower += 5;
-            Destroy(_energy);
+            _jumpPower += 2;
+            Destroy(other.gameObject);
         }
     }
     private void OnCollisionExit(Collision collision)
