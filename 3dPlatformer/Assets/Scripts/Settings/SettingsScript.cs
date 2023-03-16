@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,8 @@ public class SettingsScript : MonoBehaviour
     [SerializeField] private TMPro.TMP_Dropdown _qualityDropdown;
 
     Resolution[] resolutions;
+    public sbyte audioMixer;
+    
     void Start()
     {
         _resolutionDropdown.ClearOptions();
@@ -29,9 +32,10 @@ public class SettingsScript : MonoBehaviour
         _resolutionDropdown.AddOptions(options);
         _resolutionDropdown.RefreshShownValue();
         LoadSettings(currentResolutionIndex);
+        
     }
-
    
+
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
@@ -65,7 +69,7 @@ public class SettingsScript : MonoBehaviour
                    _resolutionDropdown.value);
         PlayerPrefs.SetInt("FullscreenPreference",
                    System.Convert.ToInt32(Screen.fullScreen));
-        
+     
     }
 
     public void LoadSettings(int currentResolutionIndex)
