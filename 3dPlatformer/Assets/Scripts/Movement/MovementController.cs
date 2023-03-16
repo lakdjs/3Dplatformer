@@ -7,7 +7,7 @@ public class MovementController : MonoBehaviour
     [SerializeField] private GameObject _player;
     [SerializeField] private Rigidbody _rigidbody;
     
-    [SerializeField] private float _Speed;
+    [SerializeField] private float _speed;
     [SerializeField] private float _rotSpeed;
     [SerializeField] private float _jumpPower;
     [SerializeField] private AnimatorManage _playerAnimationsPlayer;
@@ -48,7 +48,7 @@ public class MovementController : MonoBehaviour
         if (other.transform.tag == "Energy")
         {
             Debug.Log("est");
-            _Speed += 5;
+            _speed += 5;
             _jumpPower += 2;
             Destroy(other.gameObject);
         }
@@ -64,12 +64,17 @@ public class MovementController : MonoBehaviour
     {
         float x = Input.GetAxis("Vertical");
         float z = Input.GetAxis("Horizontal");
-        _rigidbody.velocity = new Vector3(x * _Speed, _rigidbody.velocity.y, -z *_Speed);
-        if (z != 0 || x != 0)
+        _rigidbody.velocity = new Vector3(z * _speed, _rigidbody.velocity.y, x*_speed);
+        // if (z != 0 || x != 0)
+        // {
+        //   _playerAnimationsPlayer.PlayMove();
+        // }
+        if(x!=0|| z != 0)
         {
-           _playerAnimationsPlayer.PlayMove();
+            _playerAnimationsPlayer.PlayMove();
         }
-       else
+        
+        else
         {
            _playerAnimationsPlayer.PlayIDLE();
        }
@@ -107,20 +112,20 @@ public class MovementController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            _rigidbody.velocity = Vector3.forward * _Speed;
+            _rigidbody.velocity = Vector3.forward * _speed;
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            _rigidbody.velocity = Vector3.back * _Speed;
+            _rigidbody.velocity = Vector3.back * _speed;
         }
 
         if (Input.GetKey(KeyCode.D))     
         {
-            _rigidbody.velocity = Vector3.right * _Speed;
+            _rigidbody.velocity = Vector3.right * _speed;
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            _rigidbody.velocity = Vector3.left * _Speed;
+            _rigidbody.velocity = Vector3.left * _speed;
         }
     }
 }

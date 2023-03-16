@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayScript : MonoBehaviour
 {
     [SerializeField] private Button _play;
-    public void Lvl1()
+    public void Update()
     {
         int lvl = PlayerPrefs.GetInt("levels");
         if(lvl > 3)
