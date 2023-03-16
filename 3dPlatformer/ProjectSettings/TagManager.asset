@@ -9,6 +9,7 @@ TagManager:
   - Energy
   - Key
   - Teleport
+  - Kill
   layers:
   - Default
   - TransparentFX
