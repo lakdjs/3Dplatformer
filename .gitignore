@@ -10012,6 +10012,7 @@ Library/Artifacts/00/0000aa5e666308ebf2bee6a97bc05fbd
 Library/ArtifactDB-lock
 Library/ArtifactDB
 Library/APIUpdater/project-dependencies.graph
+<<<<<<< HEAD
 3dPlatformer/Logs/AssetImportWorker0.log
 3dPlatformer/Logs/AssetImportWorker1.log
 3dPlatformer/Logs/shadercompiler-AssetImportWorker0.log
@@ -10021,3 +10022,9 @@ Library/APIUpdater/project-dependencies.graph
 3dPlatformer/Logs/shadercompiler-AssetImportWorker0.log
 3dPlatformer/Logs/shadercompiler-UnityShaderCompiler.exe0.log
 3dPlatformer/UserSettings/EditorUserSettings.asset
+=======
+3dPlatformer/Logs/shadercompiler-UnityShaderCompiler.exe0.log
+3dPlatformer/Logs/shadercompiler-AssetImportWorker0.log
+3dPlatformer/Logs/AssetImportWorker4.log
+3dPlatformer/Logs/AssetImportWorker2.log
+>>>>>>> Coins
