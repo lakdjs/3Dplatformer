@@ -7,7 +7,7 @@ public class KeyScript : MonoBehaviour
 {
     [SerializeField] private GameObject _imageKey;
     [SerializeField] private GameObject _key;
-    public int KeyNum;
+    private int KeyNum;
     private void Start()
     {
         KeyNum = 0;

@@ -5,13 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LvlManager : MonoBehaviour
 {
-    private void Update()
-    {
-        
-    }
+    
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.tag == "Teleport"&&gameObject.GetComponent<KeyScript>().KeyNum==1)
+        if (other.transform.tag == "Teleport")
         {
             UnLockLevel();
             SceneManager.LoadScene("ChoseLVL");
