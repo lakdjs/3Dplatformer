@@ -7,11 +7,7 @@ public class LvlManager : MonoBehaviour
 {
     private void Update()
     {
-        
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.transform.tag == "Teleport"&&gameObject.GetComponent<KeyScript>().KeyNum==1)
+        if (Input.GetKeyDown(KeyCode.P))
         {
             UnLockLevel();
             SceneManager.LoadScene("ChoseLVL");
