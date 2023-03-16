@@ -49,7 +49,7 @@ public class MovementController : MonoBehaviour
         {
             Debug.Log("est");
             _speed += 5;
-            _jumpPower += 2;
+            _jumpPower += 5;
             Destroy(other.gameObject);
         }
     }
